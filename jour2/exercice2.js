@@ -92,15 +92,3 @@ if (Math.floor(n) ===  Math.round(n))
 console.log(n.substring(0));
 
 
-
-
-
-
-
-
-console.log(Math.floor(roundedNumber));
-console.log(Math.ceil(roundedNumber));
-console.log(Math.round(roundedNumber));
-console.log(roundedNumber.substring(0));
-
-
