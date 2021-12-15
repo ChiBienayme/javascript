@@ -1,16 +1,19 @@
 //01 - Number
-var integer = 102;
-var float = 13.9;
+const integer = 102;
+const float = 13.9;
 console.log(integer, float);
 
 //02 - Convert
 let basic = 34;
-stringFied = basic.toString();
-console.log(stringFied); 
+let stringField = basic.toString();
+console.log(stringField);
+
+const basic = 34;
+console.log(basic.toString());
 
 // 03 - Round
-let number = 1.5;
-let rounded = Math.round(number);
+const number = 1.5;
+const rounded = Math.round(number);
 console.log(rounded);
 
 // console.log(Math.round(number));
@@ -18,77 +21,120 @@ console.log(rounded);
 // console.log(Math.ceil(number));
 
 // 04 - Arithmetique
-let test = 12;
-let bis = 5;
-console.log(test + bis); //17
+const test = 12;
+const bis = 5;
+console.log(
+  test + bis,
+  test - bis,
+  test * bis,
+  test / bis,
+  test ** bis,
+  test % bis
+);
 
 // 05 - Comparaison
-let test = 143;
-let bis = 219
-console.log(test > bis); //false
+const test = 143;
+const bis = 219;
+console.log(
+  test > bis,
+  test < bis,
+  test >= bis,
+  test <= bis,
+  test === bis,
+  test != bis
+);
 
 // 06 - Condition 1
-let limit = 50;
-let score = 64;
-if (score >= limit ) {
-    console.log("Ok good!");
+const limit = 50;
+const score = 64;
+if (score >= limit) {
+  console.log("Ok good!");
 } else {
-    console.log("Oh noo....");
+  console.log("Oh noo....");
+}
+
+const limit = 50;
+const score = 64;
+console.log(score >= limit ? "Oh good" : "Oh no");
+score >= limit ? console.log("Oh good") : console.log("Oh no");
+
+const limit = 50;
+const score = 64;
+const hasWon = limit >= score;
+if (hasWon) {
+  console.log("Ok good!");
+} else {
+  console.log("Oh noo....");
+}
+
+const limit = 50;
+const score = 64;
+const hasWon = limit >= score; //true
+if (!hasWon) {
+  //! donne l'inverse de hasWon, donc l'inverse de true = false
+  console.log("Oh noo....");
+} else {
+  console.log("Ok good!");
 }
 
 // 07 - Condition 2
 let password = "azerty";
-if (password.length >=5) {
-    console.log("The password is secure");
+if (password.length > 5) {
+  console.log("The password is secure");
 } else {
-    console.log("NaN");
+  console.log("NaN");
 }
 
 // 08 - Condition 3
-let limit = 50;
-let score = 64; 
-let password = "azerty";
-if (score >= limit && password.length >=5 ) {
-    console.log("Everything is good" );
-} else if (score >= limit || password.length >=5) {
-        console.log("Something is good");
+const limit = 50;
+const score = 64;
+const password = "azerty";
+if (score >= limit && password.length > 5) {
+  console.log("Everything is good");
+} else if (score >= limit || password.length > 5) {
+  console.log("Something is good");
 } else {
-    console.log("Nothing is good");
+  console.log("Nothing is good");
 }
 
-// Bonus
-const n = Math.floor(Math.random() * 6) +1;
+// Bonus 1
+const n = Math.floor(Math.random() * 6) + 1; //+1 pour eviter 0
 console.log(n);
 if (n === 6) {
-    console.log("Yes I win");
+  console.log("Yes I win");
 } else {
-    console.log("So close....");
+  console.log("So close....");
 }
 
 // Bonus 2
-const month = "Novembre";
+const month = "January";
 switch (month) {
-    case "December", "January", "February": 
-        console.log("Winter");
-        break;
-    case "March", "April", "May":
-        console.log("Spring");
-        break;
-    case "June", "July" , "August":
-        console.log("Summer");
-        break;
-    default:
-        console.log("Fall");
-}  
+  case ("December", "January", "February"):
+    console.log("Winter");
+    break;
+  case ("March", "April", "May"):
+    console.log("Spring");
+    break;
+  case ("June", "July", "August"):
+    console.log("Summer");
+    break;
+  default:
+    console.log("Fall");
+}
 
 // Bonus 3
-const n = "12.4";
-if (Math.floor(n) ===  Math.round(n))
-{
-    console.log(Math.floor(n));
+const n = 3.6;
+if (n - Math.floor(n) >= 0.5) {
+  console.log(Math.ceil(n));
 } else {
-    console.log(Math.ceil(n));
+  console.log(Math.floor(n));
 }
-console.log(n.substring(0));
 
-
+const strNumber = n.toString();
+const index = strNumber.indexOf(".");
+const strNumberSubstr = strNumber.substring(index);
+if (strNumberSubstr >= 0.5) {
+  console.log(Math.ceil(n));
+} else {
+  console.log(Math.floor(n));
+}
