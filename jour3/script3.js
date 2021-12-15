@@ -18,13 +18,13 @@ console.log(ingredients.reverse());
 
 // Boucles
 //WHIlE = Tant que
-// const limit = 100;
-// let position = 0;
-// while (position < limit) { 
-//     console.log("You are not done!", position);
-//     position = position + 1; //jusqu'a 99 + 1
-// }
-// console.log("END");
+const limit = 100;
+let position = 0;
+while (position < limit) { 
+    console.log("You are not done!", position);
+    position = position + 1; //jusqu'a 99 + 1
+}
+console.log("END");
 
 //FOR
 for (let i = 1; i <= 10; i++ ) { 

@@ -50,6 +50,24 @@ for (var i = 1; i <= limit; i++) {
 var str = "Hello Konexio!";
 console.log(str.split("").reverse().join(" "));
 
+
+var str = "Hello Konexio!";
+var slpitStr = str.split("");
+for (const strReverse of slpitStr.reverse()) {
+    console.log(strReverse);
+}
+
+function reverseInPlace(str) {
+  var sentence = [];
+  sentence = str.split("\s+");
+  var result = "";
+  for (var i = 0; i < sentence.length; i++) {
+      return result += sentence[i].split('').reverse().join('');
+  }
+}
+{console.log(reverseInPlace("Hello Konexio!"))
+}
+
 // Bonus 1
 
 for (let i = 1; i <= 100; i++) {
@@ -69,12 +87,12 @@ for (let i = 1; i <= 100; i++) {
 // Bonus 2 - boucle WHILE
 var n = 0;
 var x = 10;
-
 while (n < x) {
-  n++;
   x += n;
+  n++;
+  console.log(n);
 }
-console.log(x);
+
 
 var total = 0;
 var limit = 10;
@@ -96,10 +114,16 @@ var firstName = [
 ];
 var random = Math.floor(Math.random()*firstName.length);
 var randomName = firstName[random];
-console.log(randomName)
+console.log(randomName);
 
 // Bonus 4
-let array = []
-for (let i = 0; i <= 100; i++) {
-    console.log(array);
-}
+const getRandomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+for (let i = 0; i <= 20; i += 1) {
+  console.log(`Random number ${i}: ${getRandomInt(1, 100)}`);
+} 
+console.log(`Le plus grand numero est: ${Math.max(getRandomInt(1, 100))}`);
+ 
+
+
