@@ -50,22 +50,22 @@ for (var i = 1; i <= limit; i++) {
 var str = "Hello Konexio!";
 console.log(str.split("").reverse().join(" "));
 
-
 var str = "Hello Konexio!";
 var slpitStr = str.split("");
 for (const strReverse of slpitStr.reverse()) {
-    console.log(strReverse);
+  console.log(strReverse);
 }
 
 function reverseInPlace(str) {
   var sentence = [];
-  sentence = str.split("\s+");
+  sentence = str.split("s+");
   var result = "";
   for (var i = 0; i < sentence.length; i++) {
-      return result += sentence[i].split('').reverse().join('');
+    return (result += sentence[i].split("").reverse().join(""));
   }
 }
-{console.log(reverseInPlace("Hello Konexio!"))
+{
+  console.log(reverseInPlace("Hello Konexio!"));
 }
 
 // Bonus 1
@@ -84,15 +84,44 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
+for (let i = 1; i <= 100; i++)
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("fizzbuzz: ", i);
+  }
+
+for (let i = 1; i <= 100; i++)
+  if (i % 3 === 0) {
+    console.log("fizz", i);
+  }
+
+for (let i = 1; i <= 100; i++)
+  if (i % 5 === 0) {
+    console.log("buzz", i);
+  }
+
+for (let i = 1; i <= 100; i++)
+  if (i % 7 === 0) {
+    console.log("", i);
+  }
+
 // Bonus 2 - boucle WHILE
-var n = 0;
-var x = 10;
-while (n < x) {
-  x += n;
-  n++;
-  console.log(n);
+var total = 0;
+var limit = 10;
+var i = 1;
+while (total < limit) {
+  total += i;
+  i++;
+  console.log(total);
 }
 
+
+var total = 0;
+var limit = 10;
+while (total <= limit) {
+  console.log(`Total is: ${total}`);
+  total++;
+  total += i;
+}
 
 var total = 0;
 var limit = 10;
@@ -103,16 +132,16 @@ for (var i = 1; i <= limit; i++) {
 
 // Bonus 3
 var firstName = [
-                "Chi",
-                "Jessica",
-                "Andrien",
-                "Pauline",
-                "Andrei",
-                "Lysiane",
-                "Axel",
-                "Anita",
+  "Chi",
+  "Jessica",
+  "Andrien",
+  "Pauline",
+  "Andrei",
+  "Lysiane",
+  "Axel",
+  "Anita",
 ];
-var random = Math.floor(Math.random()*firstName.length);
+var random = Math.floor(Math.random() * firstName.length);
 var randomName = firstName[random];
 console.log(randomName);
 
@@ -122,8 +151,5 @@ const getRandomInt = (min, max) => {
 };
 for (let i = 0; i <= 20; i += 1) {
   console.log(`Random number ${i}: ${getRandomInt(1, 100)}`);
-} 
+}
 console.log(`Le plus grand numero est: ${Math.max(getRandomInt(1, 100))}`);
- 
-
-
