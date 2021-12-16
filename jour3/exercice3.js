@@ -140,6 +140,7 @@ while (i <= limit) {
   console.log(total);
 }
 
+
 // Bonus 3
 var firstName = [
   "Chi",
@@ -159,7 +160,7 @@ console.log(randomName);
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
-for (let i = 0; i <= 20; i += 1) {
-  console.log(`Random number ${i}: ${getRandomInt(1, 100)}`);
+for (let i = 1; i <= 20; i++) {
+  console.table(`Random number ${i}: ${getRandomInt(1, 100)}`);
 }
 console.log(`Le plus grand numero est: ${Math.max(getRandomInt(1, 100))}`);
