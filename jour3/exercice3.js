@@ -16,7 +16,7 @@ console.log(objects);
 //[ 'chair', 'pen', 'book', 'lamp' ]
 
 // Enlevez "lamp" puis affichez le résultat
-objects.pop(3);
+objects.pop();
 console.log(objects);
 //[ 'chair', 'pen', 'book' ]
 
@@ -26,36 +26,65 @@ console.log(objects);
 //[ 'chair', 'pen', 'book', 'laptop' ]
 
 // Enlevez "chair" puis affichez le résultat
-objects.shift(1);
+objects.shift();
 console.log(objects);
 //[ 'pen', 'book', 'laptop' ]
 
 // 04 - Order
-var number = [4, 10, 8, 12, 6];
-console.log(number.reverse());
+const number = [4, 10, 8, 12, 6];
+console.log(number.reverse()); //[ 6, 12, 8, 10, 4 ]
 
-var number = [4, 10, 8, 12, 6];
-number.sort((a, b) => a - b);
+const number = [4, 10, 8, 12, 6];
+number.sort((a, b) => a - b);//une fonctionne
 console.log(number); // donnera [ 4, 6, 8, 10, 12 ]
 
 // 05 - Boucle FOR
-var total = 0;
-var limit = 10;
-for (var i = 1; i <= limit; i++) {
-  total = total + i;
+let total = 0;
+const limit = 10;
+for (let i = 1; i <= limit; i++) {
+  total += i; //total = total + i
   console.log(total);
 }
 
 // 06 - Reverse
+// version 1a
+let sentence = "Hello Konexio!";
+let letters = sentence.split("");
+let result = [];
+
+for (let i = letters.length - 1; i >= 0; i--) {
+  result.push(letters[i]);
+  // console.log(result);
+}
+
+console.log(result.join(""));
+
+// version 1b
+const sentence = "Hello Konexio!";
+let result = "";
+
+for (let i = sentence.length - 1; i >= 0; i--) {
+  result += sentence[i];
+}
+
+console.log(result);
+
+
+// version 2
 var str = "Hello Konexio!";
 console.log(str.split("").reverse().join(" "));
 
+// version 3
 var str = "Hello Konexio!";
 var slpitStr = str.split("");
+
 for (const strReverse of slpitStr.reverse()) {
-  console.log(strReverse);
+  // console.log(strReverse);
 }
 
+console.log(slpitStr.join(""));
+
+// version 4
 function reverseInPlace(str) {
   var sentence = [];
   sentence = str.split("s+");
@@ -69,18 +98,18 @@ function reverseInPlace(str) {
 }
 
 // Bonus 1
-
 for (let i = 1; i <= 100; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
-    console.log("fizzbuzz", i);
+      console.log("fizzbuzz", i);
   } else if (i % 3 === 0) {
-    console.log("fizz", i);
+      console.log("fizz", i);
   } else if (i % 5 === 0) {
-    console.log("buzz", i);
+      console.log("buzz", i);
   } else if (i % 7 === 0) {
-    console.log("", i);
+      console.log("",i);
+      // continue;
   } else {
-    console.log(i);
+      console.log(i);
   }
 }
 
@@ -88,45 +117,26 @@ for (let i = 1; i <= 100; i++)
   if (i % 3 === 0 && i % 5 === 0) {
     console.log("fizzbuzz: ", i);
   }
-
 for (let i = 1; i <= 100; i++)
   if (i % 3 === 0) {
     console.log("fizz", i);
   }
-
 for (let i = 1; i <= 100; i++)
   if (i % 5 === 0) {
     console.log("buzz", i);
   }
-
 for (let i = 1; i <= 100; i++)
   if (i % 7 === 0) {
     console.log("", i);
   }
 
 // Bonus 2 - boucle WHILE
-var total = 0;
-var limit = 10;
-var i = 1;
-while (total < limit) {
+const total = 0;
+const limit = 10;
+const i = 0;
+while (i <= limit) {
   total += i;
   i++;
-  console.log(total);
-}
-
-
-var total = 0;
-var limit = 10;
-while (total <= limit) {
-  console.log(`Total is: ${total}`);
-  total++;
-  total += i;
-}
-
-var total = 0;
-var limit = 10;
-for (var i = 1; i <= limit; i++) {
-  total = total + i;
   console.log(total);
 }
 
