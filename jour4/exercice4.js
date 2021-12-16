@@ -93,29 +93,75 @@ console.log(convertSecondsTo(3700));
 
 //Bonus 1
 function generatePassword(num) {
-     result = Math.random().toString(36).toUpperCase(); 
-    //  if (result.length < 6 || result.length > 15) {
-    //     console.log("error");
-    // }
+     result = Math.random().toString(36).slice(num).toUpperCase(); 
+     
+     if (num < 6 || num > 15) {
+        console.log("error");
+    } else {
      return result;
+    }
 }
-console.log(generatePassword(19));
+console.log(generatePassword(8));
 
-var randomstring = Math.random().toString(36).slice(-8);
-Math.random()// Generate random number, eg: 0.123456
-.toString(36) // Convert  to base-36 : "0.4fzyo82mvyr"
-.slice(-8);// Cut off last 8 characters : "yo82mvyr"
 
-alert(randomstring);
-//  36: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 
-console.log(randPassword);
+const generatePassword = (length, characters) => {
+    let password = "";
+    for (let i = 0; i < length; i++) {
+      password += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return password;
+  };
+  console.log(generatePassword);
+
+  function generateP() {
+    var pass = '';
+    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 
+            'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+      
+    for (i = 1; i <= 8; i++) {
+        var char = Math.floor(Math.random()
+                    * str.length + 1);
+          
+        pass += str.charAt(char)
+    }
+      
+    return pass;
+}
+
 
 
 // Bonus 2
-function launchDice(numberOfDice) {
-    for (let i = 1;  i++) {
-        numberOfDice += i;
-   } 
-   console.log( Math.random(numberOfDice));
-}
+var player1Dice1 = Math.floor (Math.random()*6)+1;
+        var player1Dice2 = Math.floor (Math.random()*6)+1;
+
+        var player2Dice1 = Math.floor (Math.random()*6)+1;
+        var player2Dice2 = Math.floor (Math.random()*6)+1;
+
+        var scoreP1 = player1Dice1 + player1Dice2;
+        var scoreP2 = player2Dice1 + player2Dice2;
+
+        var p1d1 =  player1Dice1;
+        var p1d2 =  player1Dice2;
+
+        var p2d1 = player2Dice1;
+        var p2d2 = player2Dice2;
+
+
+        console.log ("Player 1 score is : " + scoreP1);
+        console.log(p1d1);
+        console.log(p1d2);
+        console.log ("Player 2 score is : " + scoreP2);
+        console.log(p2d1);
+        console.log(p2d2);
+        if (scoreP1 > scoreP2) {
+            console.log("Player 1 wins. Player 2 loses.");
+        }
+        else if (scoreP2 > scoreP1) {
+           console.log("Player 2 wins. Player 1 loses.");
+        }
+        else {
+            console.log("Draw."); 
+        }
