@@ -13,25 +13,6 @@ while ( dice !== 6) {
   break;
 }
 
-
-
-function rollDie() {
-  return Math.floor(Math.random() * 6); 
-}
-
-var counts = [0, 0, 0, 0, 0, 0];
-
-var results = [];
-
-for (var i = 0; i < 25; i++) {
-  var result = rollDie();
-  counts[result] = counts[result] + 1;
-  results.push(result);
-}
-
-console.log(results);  
-console.log(counts); 
-
 //03 - Course
 let ussainBolt = 0;
 let tysonGay = 0;
