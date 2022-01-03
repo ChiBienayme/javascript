@@ -12,26 +12,15 @@ console.log(total(10)); //355
 //02 - Comptons
 function multiple(num) {
     for (let i = 100; i <= 1000; i++) {
-        if (i % 7 === 0) {
-            console.table(i);
+        if (i % 7 == 0) {
+            console.log(i);
         }
     }
 }
-let result = [multiple()];
+let result = num.length;
 console.log(result.length);//128
 
-let number = 10;
-let count = 0;
 
-while (count < 10) {
-    if (number % 8 == 0) {
-        // In ra số thỏa mãn
-        console.log(number);
-        ++count;
-    }
-    // Cập nhật số được lặp qua
-    ++number;
-}
 
 //03 - Chanceux
 //Lancez un dé 20 fois et affichez la somme de tout les résultats plus grand ou égale à 5
