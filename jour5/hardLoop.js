@@ -50,6 +50,18 @@ let largestNum = arr.reduce(function (a, b) {
 
 console.log(`The largest number: ${largestNum}`);
 
+//  03 - Unique
+var arr = [];
+
+while(arr.length < 50){
+    var num = Math.floor(Math.random() * 200) + 50;
+    if(arr.indexOf(num) === -1) arr.push(num);
+}
+console.log(arr);
+
+// 04 - Nested Loop
+var words = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
+
    
 
 
