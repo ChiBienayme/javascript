@@ -104,6 +104,43 @@ function format(num) {
     console.log(`${hours} : ${minutes} : ${secondes}`);
 }
 
+//Another
+
+function formatWithoutMaths(num) {
+    var days = 0;
+    var hours = 0;
+    var minutes = 0;
+    var seconds = 0;
+    for (var i = 0; i < num; i++) {
+        seconds++;
+        if (seconds === 60) {
+            minutes++;
+            seconds = 0;
+        }
+        if (minutes === 60) {
+            hours++;
+            minutes = 0;
+        }
+        if (hours === 24) {
+            days++;
+            hours = 0;
+        }
+    }
+    console.log(`${hours} : ${minutes} : ${seconds}`);
+}
+
+function mehdiFormat(num) {
+    var hours = Math.floor(num / 3600);
+    var rest = num - hours * 3600;
+    var minutes = Math.floor(rest / 60);
+    var seconds = rest - minutes * 60;
+    console.log(`${hours} : ${minutes} : ${seconds}`);
+}
+
+format(3700);
+formatWithoutMaths(3700);
+mehdiFormat(3700);
+
 // Bonus 1:
 function generatePassword(num) {
     var max = 122;
@@ -136,9 +173,9 @@ function generatePassword(num) {
         for (var i = 0; i <= num; i++) {
 
             var max = lettres.length - 1
-            var b = Math.floor(Math.random() * (max + 1))
+            var index = Math.floor(Math.random() * (max + 1))
 
-            password.push(lettres[b])
+            password.push(lettres[index])
         }
 
         return password.join("")
@@ -175,37 +212,3 @@ if (joueur1 > joueur2) {
     console.log("Egalité");
 }
 
-function formatWithoutMaths(num) {
-    var days = 0;
-    var hours = 0;
-    var minutes = 0;
-    var seconds = 0;
-    for (var i = 0; i < num; i++) {
-        seconds++;
-        if (seconds === 60) {
-            minutes++;
-            seconds = 0;
-        }
-        if (minutes === 60) {
-            hours++;
-            minutes = 0;
-        }
-        if (hours === 24) {
-            days++;
-            hours = 0;
-        }
-    }
-    console.log(`${hours} : ${minutes} : ${seconds}`);
-}
-
-function mehdiFormat(num) {
-    var hours = Math.floor(num / 3600);
-    var rest = num - hours * 3600;
-    var minutes = Math.floor(rest / 60);
-    var seconds = rest - minutes * 60;
-    console.log(`${hours} : ${minutes} : ${seconds}`);
-}
-
-format(3700);
-formatWithoutMaths(3700);
-mehdiFormat(3700);

@@ -91,46 +91,35 @@ function convertSecondsTo(sec)
 }
 console.log(convertSecondsTo(3700));
 
+function format(num) {
+    let hour = Math.floor(num / 3600);
+    let minute = Math.floor(num % 3600 / 60);
+    let second = Math.floor(num % 60);
+    // console.log(hour + ":" + minute + ":" + second);
+    console.log(`${hour}:${minute}:${second}`);
+}
+format(3700)
+
 //Bonus 1
+let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+const length = alphabet.length;
+
 function generatePassword(num) {
-     result = Math.random().toString(36).slice(num).toUpperCase(); 
-     
-     if (num < 6 || num > 15) {
-        console.log("error");
+    if (num < 6 || num > 15) {
+        console.log("Error");
     } else {
-     return result;
+        let password = "";
+        for (let i =0; i < num; i++) {
+            // password += myCharset[ Math.floor(Math.random() * length) ];
+            const index = Math.floor(Math.random() * length);
+            password += alphabet[index];
+        }
+        return password;
     }
 }
-console.log(generatePassword(8));
-
-
-
-const generatePassword = (length, characters) => {
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      password += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
-    }
-    return password;
-  };
-  console.log(generatePassword);
-
-  function generateP() {
-    var pass = '';
-    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 
-            'abcdefghijklmnopqrstuvwxyz0123456789@#$';
-      
-    for (i = 1; i <= 8; i++) {
-        var char = Math.floor(Math.random()
-                    * str.length + 1);
-          
-        pass += str.charAt(char)
-    }
-      
-    return pass;
-}
-
+const newPassword = generatePassword(7);
+console.log(newPassword);
 
 
 // Bonus 2
