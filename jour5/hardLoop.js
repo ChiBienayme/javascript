@@ -47,7 +47,6 @@ console.log(arr);
 let largestNum = arr.reduce(function (a, b) {
   return Math.max(a, b);
 });
-
 console.log(`The largest number: ${largestNum}`);
 
 //  03 - Unique

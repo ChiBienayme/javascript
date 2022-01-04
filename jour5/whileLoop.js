@@ -6,31 +6,13 @@ while (x <= 200) {
 }
 
 // 02 - Try again
-var count = 0;
-var dice = null;
-var min = 1;
-var max = 6;
-while ( dice !== 6)  {
-    var diceRandom  = Math.floor(Math.random() * (max - min + 1) + min); //1 2 3 4 5 6
-    if (diceRandom === 6) {
-        count++;
-    }
-    break;
+let dice = null;
+let count = 0;
+while (dice !== 6 && dice <= 6) {
+  dice = Math.floor(Math.random() * 6) +1;
+    console.log(dice);
+    count++
 }
-console.log(diceRandom);
-console.log(count);
-
-
-var count = 0;
-var dice = null;
-while ( dice !== 6)  {
-    var throwDice  = Math.floor(Math.random() * 6) + 1; //1 2 3 4 5 6 
-    if (throwDice === 6) { 
-      count++; 
-      break;
-    } 
-}
-console.log(throwDice);
 console.log(count);
 
 
@@ -38,12 +20,46 @@ console.log(count);
 let ussainBolt = 0;
 let tysonGay = 0;
 while (ussainBolt <= 100 || tysonGay <=100) {
-  let ussainBoltRandom = Math.floor(Math.random) * 10 + 1;
-  let tysonGayRandom = Math.floor(Math.random) * 10 + 1;
-  console.log();
+  let ussainBoltRandom = Math.floor(Math.random() * 10) + 1;
+  let tysonGayRandom = Math.floor(Math.random() * 10) + 1;
+  if (ussainBoltRandom > tysonGayRandom) {
+    console.log(`Ussain Bolt ${ussainBoltRandom} has won Tyson Gay ${tysonGayRandom}`);
+  } else {
+    console.log(`Ussain Bolt ${ussainBoltRandom} has lost Tyson Gay ${tysonGayRandom}`);
+  }
   break;
 }
-console.log(`The winner is + ${arr}`);
+
+let ussainBolt = 0;
+let tysonGay = 0;
+let ussainBoltTotal = 0;
+let tysonGayTotal = 0;
+
+while (ussainBolt <= 100 && tysonGay <=100) {
+
+  let ussainBolt = Math.floor(Math.random() * 10) + 1;
+  let tysonGay = Math.floor(Math.random() * 10) + 1;
+
+  if (ussainBolt > tysonGay) {
+    console.log(`Ussain Bolt ${ussainBolt} has won Tyson Gay ${tysonGay}`);
+    ussainBoltTotal += ussainBolt;
+
+  } else if (ussainBolt = tysonGay){
+    console.log(`Ussain Bolt ${ussainBolt} equals  Tyson Gay ${tysonGay}`);
+
+  } else {
+    console.log(`Ussain Bolt ${ussainBolt} has lost Tyson Gay ${tysonGay}`);
+    tysonGayTotal += tysonGay;
+  }
+
+  break;
+}
+console.log(ussainBoltTotal);
+console.log(tysonGayTotal);
+
+
+
+ 
 
 
 //04 - Des boites
