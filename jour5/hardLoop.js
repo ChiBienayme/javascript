@@ -50,45 +50,23 @@ let largestNum = arr.reduce(function (a, b) {
 console.log(`The largest number: ${largestNum}`);
 
 //  03 - Unique
-var arr = [];
-while(arr.length < 50){
-    var num = Math.floor(Math.random() * 200) + 50;
-    if(arr.indexOf(num) === -1) arr.push(num);
-}
-console.log(arr);
-while (num >= 75 && num <= 100) {
-    console.log(arr.sort(function(a, b) {return a - b}).unshift());
-    break;
-}
-
-//version 2
 const arr = [];
 var min = 50;
 var max = 200;
-for (var i = 50; i <= 200; i++) {
-    var num = Math.floor(Math.random() * (max - min + 1) + min);  
-    if(arr.indexOf(num) === -1) arr.push(num);
-}
-// console.log(arr);
-while (num >= 75 && num <= 100) {
-  arr.sort(function(min, max) {return min - max}).unshift();
-}
-console.log(arr);
 
-// version 3
-const arr = [];
-var min = 50;
-var max = 200;
-for (var i = 50; i <= 200; i++) {
+for (var i = 0; i <= 50; i++) {
     var num = Math.floor(Math.random() * (max - min + 1) + min);  
     if(arr.indexOf(num) === -1) arr.push(num);
 }
 
-const arrNew = [];
-while (num >= 75 && num <= 100) {
+let j=0;
+while (arr[j] >= 75 && arr[j] <= 100) {
+console.log(j);
+j++;
 }
-arr.sort(function(a, b) {return a - b}).unshift();
-console.log(arrNew);
+// arr.sort(function(a, b) {return a - b}).unshift();
+console.log(arr);
+
 
 
 
