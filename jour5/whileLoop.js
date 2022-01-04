@@ -17,49 +17,31 @@ console.log(count);
 
 
 //03 - Course
-let ussainBolt = 0;
-let tysonGay = 0;
-while (ussainBolt <= 100 || tysonGay <=100) {
-  let ussainBoltRandom = Math.floor(Math.random() * 10) + 1;
-  let tysonGayRandom = Math.floor(Math.random() * 10) + 1;
-  if (ussainBoltRandom > tysonGayRandom) {
-    console.log(`Ussain Bolt ${ussainBoltRandom} has won Tyson Gay ${tysonGayRandom}`);
-  } else {
-    console.log(`Ussain Bolt ${ussainBoltRandom} has lost Tyson Gay ${tysonGayRandom}`);
-  }
-  break;
-}
 
 let ussainBolt = 0;
 let tysonGay = 0;
 let ussainBoltTotal = 0;
 let tysonGayTotal = 0;
 
-while (ussainBolt <= 100 && tysonGay <=100) {
+while (ussainBoltTotal <= 100 && tysonGayTotal <=100) {
+    ussainBolt = Math.floor(Math.random() * 10) + 1;
+    tysonGay = Math.floor(Math.random() * 10) + 1;
 
-  let ussainBolt = Math.floor(Math.random() * 10) + 1;
-  let tysonGay = Math.floor(Math.random() * 10) + 1;
-
-  if (ussainBolt > tysonGay) {
-    console.log(`Ussain Bolt ${ussainBolt} has won Tyson Gay ${tysonGay}`);
-    ussainBoltTotal += ussainBolt;
-
-  } else if (ussainBolt = tysonGay){
-    console.log(`Ussain Bolt ${ussainBolt} equals  Tyson Gay ${tysonGay}`);
-
-  } else {
-    console.log(`Ussain Bolt ${ussainBolt} has lost Tyson Gay ${tysonGay}`);
+    ussainBoltTotal +=  ussainBolt;
     tysonGayTotal += tysonGay;
-  }
-
-  break;
 }
-console.log(ussainBoltTotal);
-console.log(tysonGayTotal);
 
+if (ussainBoltTotal > tysonGayTotal) {
+  console.log(`Ussain Bolt ${ussainBoltTotal} has won Tyson Gay ${tysonGayTotal}`);
 
+} else if (ussainBoltTotal = tysonGayTotal){
+  console.log(`Ussain Bolt ${ussainBoltTotal} equals  Tyson Gay ${tysonGayTotal}`);
 
- 
+} else {
+  console.log(`Ussain Bolt ${ussainBoltTotal} has lost Tyson Gay ${tysonGayTotal}`);
+}
+console.log(`Total score of Ussain Bolt is ${ussainBoltTotal}`);
+console.log(`Total score of Tyson Gay is ${tysonGayTotal}`);
 
 
 //04 - Des boites

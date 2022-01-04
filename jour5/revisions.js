@@ -1,5 +1,5 @@
 // 01 - Alphabet
-function sortLetters
+function sortLetters();
 
 // 02 - XOXO
 function countEach(x,o) {

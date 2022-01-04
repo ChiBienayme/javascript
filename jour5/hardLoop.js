@@ -51,12 +51,47 @@ console.log(`The largest number: ${largestNum}`);
 
 //  03 - Unique
 var arr = [];
-
 while(arr.length < 50){
     var num = Math.floor(Math.random() * 200) + 50;
     if(arr.indexOf(num) === -1) arr.push(num);
 }
 console.log(arr);
+while (num >= 75 && num <= 100) {
+    console.log(arr.sort(function(a, b) {return a - b}).unshift());
+    break;
+}
+
+//version 2
+const arr = [];
+var min = 50;
+var max = 200;
+for (var i = 50; i <= 200; i++) {
+    var num = Math.floor(Math.random() * (max - min + 1) + min);  
+    if(arr.indexOf(num) === -1) arr.push(num);
+}
+// console.log(arr);
+while (num >= 75 && num <= 100) {
+  arr.sort(function(min, max) {return min - max}).unshift();
+}
+console.log(arr);
+
+// version 3
+const arr = [];
+var min = 50;
+var max = 200;
+for (var i = 50; i <= 200; i++) {
+    var num = Math.floor(Math.random() * (max - min + 1) + min);  
+    if(arr.indexOf(num) === -1) arr.push(num);
+}
+
+const arrNew = [];
+while (num >= 75 && num <= 100) {
+}
+arr.sort(function(a, b) {return a - b}).unshift();
+console.log(arrNew);
+
+
+
 
 // 04 - Nested Loop
 const words = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
@@ -78,6 +113,44 @@ function splitWordsAddInTab() {
   return numberO;
 }
 console.log(splitWordsAddInTab());
+
+//Another
+const tab = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
+const tab2 = ["hello", "stop", "go go go"];
+const tab3 = ["hello", "stop", 55];
+const tab4 = 78;
+
+function splitWordsAddInTab(words) {
+	if (!Array.isArray(words)) {
+		console.log("We need an array of strings here!");
+		return null;
+	}
+
+	let word = "";
+	let numberO = 0;
+
+	for (let i = 0; i < words.length; i++) {
+		if (!(typeof words[i] === "string")) {
+			console.log("The array should contain only strings!");
+			return null;
+		}
+
+		word = words[i].split("");
+
+		for (let j = 0; j < word.length; j++) {
+			if (word[j] === "o") {
+				numberO += 1;
+			}
+		}
+	}
+
+	return numberO;
+}
+
+console.log(splitWordsAddInTab(tab));
+console.log(splitWordsAddInTab(tab2));
+console.log(splitWordsAddInTab(tab3));
+console.log(splitWordsAddInTab(tab4));
    
 
 
