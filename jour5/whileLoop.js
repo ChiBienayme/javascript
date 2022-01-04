@@ -6,20 +6,42 @@ while (x <= 200) {
 }
 
 // 02 - Try again
-let dice = null;
-let count = 0;
-while ( dice !== 6) {
-  console.log(Math.floor(Math.random(parseFloat)*6 + 1));
-  break;
+var count = 0;
+var dice = null;
+var min = 1;
+var max = 6;
+while ( dice !== 6)  {
+    var diceRandom  = Math.floor(Math.random() * (max - min + 1) + min); //1 2 3 4 5 6
+    if (diceRandom === 6) {
+        count++;
+    }
+    break;
 }
+console.log(diceRandom);
+console.log(count);
+
+
+var count = 0;
+var dice = null;
+while ( dice !== 6)  {
+    var throwDice  = Math.floor(Math.random() * 6) + 1; //1 2 3 4 5 6 
+    if (throwDice === 6) { 
+      count++; 
+      break;
+    } 
+}
+console.log(throwDice);
+console.log(count);
+
 
 //03 - Course
 let ussainBolt = 0;
 let tysonGay = 0;
 while (ussainBolt <= 100 || tysonGay <=100) {
-  let ussainBoltRandom = Math.floor(Math.random)*10 + 1;
-  let tysonGayRandom = Math.floor(Math.random)*10 + 1;
-  console.log());
+  let ussainBoltRandom = Math.floor(Math.random) * 10 + 1;
+  let tysonGayRandom = Math.floor(Math.random) * 10 + 1;
+  console.log();
+  break;
 }
 console.log(`The winner is + ${arr}`);
 

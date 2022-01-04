@@ -1,5 +1,5 @@
 //01 - Sum
-var arr = [];
+const arr = [];
 while(arr.length < 50){
     var num = Math.floor(Math.random() * 100) + 1;
     if(arr.indexOf(num) === -1) arr.push(num); 
@@ -18,7 +18,7 @@ function sumArray(arr){
 console.log(sumArray(arr));
 
 //02 - Max
-var arr = [];
+const arr = [];
 
 while(arr.length < 50){
     var num = Math.floor(Math.random() * 200) + 50;
@@ -36,7 +36,7 @@ arr.forEach((element) => {
 console.log(`The largest number in the array: ${temp}`);
 
 //version 2
-var arr = [];
+const arr = [];
 
 while(arr.length < 50){
     var num = Math.floor(Math.random() * 200) + 50;
@@ -60,8 +60,25 @@ while(arr.length < 50){
 console.log(arr);
 
 // 04 - Nested Loop
-var words = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
+const words = ["hello", "goodbye", "yes", "no", "stop", "go go go"];
 
+function splitWordsAddInTab() {
+
+  let word = "";
+  let numberO = 0;
+
+  for (let i = 0; i < words.length; i++) {
+    word = words[i].split("");
+
+    for (let j = 0; j < word.length; j++) {
+      if (word[j] === "o") {
+        numberO +=1;
+      }
+    }
+  }
+  return numberO;
+}
+console.log(splitWordsAddInTab());
    
 
 

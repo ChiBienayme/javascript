@@ -10,20 +10,29 @@ function total(num) {
 console.log(total(10)); //355
 
 //02 - Comptons
-function multiple(num) {
-    for (let i = 100; i <= 1000; i++) {
-        if (i % 7 == 0) {
-            console.log(i);
-        }
+let count = 0;
+for (let i = 100; i <= 1000; i++) {
+    if (i % 7 === 0) {
+        count++
+        // count += 1
+        // console.log(i);
     }
 }
-let result = num.length;
-console.log(result.length);//128
-
-
+console.log(count);//128
 
 //03 - Chanceux
 //Lancez un dé 20 fois et affichez la somme de tout les résultats plus grand ou égale à 5
+var sum = 0;
+var min = 1;
+var max = 6;
+for (var i = 1; i <= 20; i++) {
+    var dice  = Math.floor(Math.random() * (max - min + 1) + min); //1 2 3 4 5 6
+    if (dice >= 5) {
+        sum += dice;
+    }
+    console.log(dice);
+}
+console.log(sum);
 
 //04 - Des boites
 var box1 = 12;
