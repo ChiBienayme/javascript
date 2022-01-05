@@ -1,6 +1,6 @@
 
 
-var calculator = require('./ex3');
+var calculator = require('./table-utils');
  
 var a=10, b=5;
  

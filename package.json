@@ -1,0 +1,26 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChiBienayme/javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChiBienayme/javascript/issues"
+  },
+  "homepage": "https://github.com/ChiBienayme/javascript#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "lodash": "^4.17.21",
+    "prompt": "^1.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
