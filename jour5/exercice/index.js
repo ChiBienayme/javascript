@@ -1,6 +1,8 @@
-const table = require("./ex3");
-console.log(tavl);
-// login()
-authFunctions.login();
-authFunctions.logout();
-authFunctions.register();
+
+
+var calculator = require('./ex3');
+ 
+var a=10, b=5;
+ 
+console.log("Addition : "+calculator.add(a,b));
+console.log("Multiplication : "+calculator.multiply(a,b));
