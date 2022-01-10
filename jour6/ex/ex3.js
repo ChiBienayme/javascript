@@ -15,7 +15,7 @@ var prompt = require('prompt');
   }, {
     name: 'username',
     description: 'Your username',
-    pattern: /^[a-zA-Z0-9\-]+$/,
+    pattern: /^[a-zA-Z0-9\-]+$/, // /^[\b\-]$/
     message: 'Le username ne doit comporter que des lettres, chiffres et tirets (les petits)',
     type: 'string',
     required: true
