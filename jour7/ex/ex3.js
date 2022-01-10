@@ -15,3 +15,5 @@ const shortNames = longNames.map(function(name) {
 
 console.log(shortNames);
 
+
+
