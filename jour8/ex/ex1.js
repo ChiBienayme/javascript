@@ -2,20 +2,18 @@
 
 const axios = require("axios");
 
-const countriesNames = [];
+axios.get("https://restcountries.com/v3.1/all")
+.then(function(res) {
 
-// axios.get("https://restcountries.com/rest/v3.1/all")
-// .then(function(res) {
-//         countriesNames = res.data
-//             .map(function(getCountries) {
-//                 countriesNames = getCountries.name.common
-//                  return getCountries += countriesNames; 
-//             });
-        
-// })
+        let countriesNames = res.data
+            .map(function(getCountries) {
+                 return getCountries.name.common; 
+            });
 
+        console.log(countriesNames);
+})
 
 
-console.log(getCountries);
+
 
 
