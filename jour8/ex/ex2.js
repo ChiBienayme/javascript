@@ -1,15 +1,12 @@
 //02 - Chuck Norris
 const axios = require("axios");
 
-const countriesNames = [];
 
-axios.get(" https://api.chucknorris.io/")
-.then(function(res) {
+    axios.get('https://api.chucknorris.io/jokes/random')
+    .then(function(getFact) {
 
-        countriesNames = res.data
-            .map(function(getFact) {
-                 return getFact.Math.floor(Math.random() * + ); 
-            });
-
-        console.log(countriesNames);
-})
+        console.log({fact: getFact.data.value});
+    })
+    .catch(function(err) {
+        console.log("Error!");
+    })
