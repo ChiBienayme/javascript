@@ -10,7 +10,7 @@ axios.get("https://restcountries.com/v3.1/all")
                  return getCountries.name.common; 
             });
 
-        console.log(countriesNames);
+        console.log(countriesNames.join(" - "));
 })
 .catch(function(err) {
     console.log("Error!");

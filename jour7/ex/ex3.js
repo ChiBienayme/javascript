@@ -1,23 +1,19 @@
 // 03 - Map Names
 const longNames = [
-	{
-		firstName: "Jane",
-		lastName: "Doe"
-	},
-	{
-		firstName: "John",
-		lastName: "Smith"
-	}
+  {
+    firstName: "Jane",
+    lastName: "Doe",
+  },
+  {
+    firstName: "John",
+    lastName: "Smith",
+  },
 ];
-const shortNames = longNames.map(function(name) {
-    return `{name: ${name.firstName} ${name.lastName}}`;
+const shortNames = longNames.map(function (longName) {
+  return {
+    name : `${longName.firstName} ${longName.lastName}`,
+  };
+    
 });
 
 console.log(shortNames);
-
-
-
-
-
-
-

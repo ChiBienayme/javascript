@@ -1,19 +1,12 @@
 //04 - Filter Numbers
 const array = [1, "toto", 34, "javascript", 8];
 
-const numbers = array.filter(function numbersOnly(value) {
-        if (typeof (value) === 'number') {
-            return value;
+const numbers = array.filter(function (number) {
+        if (typeof number === 'number') {
+        return number;
+        // return typeof number === "number";
         }
     });
 console.log(numbers);
 
 
-// V2
-const array = [1,"toto",34,"javascript",8];
-const numbers = array.filter(function(num){
-    return num.toString.length;
-}
-);
-
-console.log(numbers);

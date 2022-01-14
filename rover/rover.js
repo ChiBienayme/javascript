@@ -17,24 +17,131 @@ const grid = [
   [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
 ];
 
-let pokemonGrid = [[], [], [], [], [], [], [], [], [], []];
+// 2nd grille 'cachée' contenant les 100 pokémons
+let pokemonGrid = [
+  [
+    "bulbasaur",
+    "ivysaur",
+    "venusaur",
+    "charmander",
+    "charmeleon",
+    "charizard",
+    "squirtle",
+    "wartortle",
+    "blastoise",
+    "caterpie",
+  ],
+  [
+    "metapod",
+    "butterfree",
+    "weedle",
+    "kakuna",
+    "beedrill",
+    "pidgey",
+    "pidgeotto",
+    "pidgeot",
+    "rattata",
+    "raticate",
+  ],
+  [
+    "spearow",
+    "fearow",
+    "ekans",
+    "arbok",
+    "pikachu",
+    "raichu",
+    "sandshrew",
+    "sandslash",
+    "nidoran-f",
+    "nidorina",
+  ],
+  [
+    "nidoqueen",
+    "nidoran-m",
+    "nidorino",
+    "nidoking",
+    "clefairy",
+    "clefable",
+    "vulpix",
+    "ninetales",
+    "jigglypuff",
+    "wigglytuff",
+  ],
+  [
+    "zubat",
+    "golbat",
+    "oddish",
+    "gloom",
+    "vileplume",
+    "paras",
+    "parasect",
+    "venonat",
+    "venomoth",
+    "diglett",
+  ],
+  [
+    "dugtrio",
+    "meowth",
+    "persian",
+    "psyduck",
+    "golduck",
+    "mankey",
+    "primeape",
+    "growlithe",
+    "arcanine",
+    "poliwag",
+  ],
+  [
+    "poliwhirl",
+    "poliwrath",
+    "abra",
+    "kadabra",
+    "alakazam",
+    "machop",
+    "machoke",
+    "machamp",
+    "bellsprout",
+    "weepinbell",
+  ],
+  [
+    "victreebel",
+    "tentacool",
+    "tentacruel",
+    "geodude",
+    "graveler",
+    "golem",
+    "ponyta",
+    "rapidash",
+    "slowpoke",
+    "slowbro",
+  ],
+  [
+    "magnemite",
+    "magneton",
+    "farfetchd",
+    "doduo",
+    "dodrio",
+    "seel",
+    "dewgong",
+    "grimer",
+    "muk",
+    "shellder",
+  ],
+  [
+    "cloyster",
+    "gastly",
+    "haunter",
+    "gengar",
+    "onix",
+    "drowzee",
+    "hypno",
+    "krabby",
+    "kingler",
+    "voltorb",
+  ],
+];
 
-function pushPokemon() {
-  axios
-    .get(`https://pokeapi.co/api/v2/pokemon-species/?offset=0&limit=100`)
-    .then((res) => {
-      let pokemons = res.data.results.map((pokemon) => {
-        return pokemon.name;
-      });
-
-      for (let i = 0; i < 10; i++) {
-        for (let k = 0; k < 10; k++) {
-          pokemonGrid[i].push(pokemons[k]);
-        }
-      }
-    });
-}
-
+// Position de départ du rover
 let rover = {
   direction: "N",
   x: 0,
@@ -192,50 +299,25 @@ function moveBackward(rover) {
   }
 }
 
+// Choisi un pokemon random parmis les 100
+let randomPokemon = "";
+
 function catchPokemon(randomId) {
+  grid[0][0] = "N";
+  console.table(grid);
   console.log("Chargement en cours...");
 
   axios
     .get(`https://pokeapi.co/api/v2/pokemon-species/${randomId}`)
     .then((res) => {
-      const randomPokemon = res.data.name;
+      randomPokemon = res.data.name;
 
-      // Permet de piloter le rover en fonction de l'ordre de l'utilisateur
-      function pilotRover() {
-        // On récupère l'entrée de l'utilisateur
-        prompt.get(
-          { name: "letters", description: "Enter letters" },
-          function (err, res) {
-            let commands = Object.values(res);
+      // Instructions
+      console.log(`Let\'s find ${randomPokemon.toUpperCase()} !!`);
+      console.log(`Enter "l" (left) or "r" (right) to turn the rover`);
+      console.log(`Enter "f" (forward) or "b" (backward) to move the rover`);
 
-            // GUARD
-            if (err) {
-              console.log("ERREUR");
-            }
-
-            // Appelle les fonctions de direction et de déplacement
-            for (let i = 0; i < commands.length; i++) {
-              let command = commands[i];
-
-              if (command === "l") {
-                turnLeft(rover);
-              } else if (command === "r") {
-                turnRight(rover);
-              } else if (command === "f") {
-                moveForward(rover);
-              } else if (command === "b") {
-                moveBackward(rover);
-              } else {
-                console.log("Enter a valid command");
-              }
-            }
-
-            if (rover.x === randomPokemon.x && rover.y === randomPokemon.y) {
-              return console.log("*** YOU WIN ***");
-            }
-          }
-        );
-      }
+      // Lancement du jeu
       pilotRover();
     })
     .catch((err) => {
@@ -243,5 +325,48 @@ function catchPokemon(randomId) {
     });
 }
 
-pushPokemon();
+// Permet de piloter le rover en fonction de l'ordre de l'utilisateur
+function pilotRover() {
+  // On récupère l'entrée de l'utilisateur
+  prompt.get(
+    { name: "letters", description: "Enter a letter" },
+    function (err, res) {
+      let commands = Object.values(res);
+
+      // GUARD
+      if (err) {
+        console.log("ERREUR");
+      }
+
+      // Appelle les fonctions de direction et de déplacement
+      for (let i = 0; i < commands.length; i++) {
+        let command = commands[i];
+
+        if (command === "l") {
+          turnLeft(rover);
+        } else if (command === "r") {
+          turnRight(rover);
+        } else if (command === "f") {
+          moveForward(rover);
+        } else if (command === "b") {
+          moveBackward(rover);
+        } else {
+          console.log("Enter a valid command");
+        }
+      }
+
+      // Si la position du rover === celle du pokemon random --> Gagné, fin du jeu
+      if (pokemonGrid[rover.y][rover.x] === randomPokemon) {
+        return console.log(
+          `*** YOU CATCH ${randomPokemon.toUpperCase()} *** 
+          \nPokedex is updating... You can put your cap back.
+          \nPosition : X = ${rover.x}; Y = ${rover.y}`
+        );
+      }
+
+      pilotRover();
+    }
+  );
+}
+
 catchPokemon(Math.floor(Math.random() * (100 - 1 + 1) + 1));

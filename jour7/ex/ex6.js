@@ -1,6 +1,6 @@
 
 // 06 - Cakes
-const cake = [
+const cakes = [
 	{
 		name: "cake",
 		flavor: "vanilla",
@@ -28,9 +28,20 @@ const cake = [
 	},
 ]
 
-const soldOut = cake.filter(function(value) {
-    if (value.flavor === 'chocolate') {
-        return value.status = "sold out !" ;
+const soldOut = cakes
+.filter(function(cake) {
+    if (cake.flavor === 'chocolate') {
+        return cake;
     }
+})
+.map(function(chocolateCake) {
+	chocolateCake.status = "Sold Out!";
+	return chocolateCake;
 });
 console.log(soldOut);
+
+// const soldOut = cakes.filter(function(cake) {
+//     if (cake.flavor === 'chocolate') {
+//         return cake.status = "sold out !" ;
+//     }
+// });

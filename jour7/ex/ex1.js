@@ -8,3 +8,10 @@ fs.readFile("jour07.txt", function (err, data) {
     }
     console.log("Contenu du fichier:", data.toString());
 });
+
+// correction
+var fs = require("fs");
+
+fs.readFile("./jour7.txt", function(error, data) {
+    console.log(data.toString());
+})
